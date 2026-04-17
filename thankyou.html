@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thank You — Prestige Motors</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .thankyou-section { animation: fadeIn 0.8s ease forwards; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .thankyou-divider {
+      width: 60px; height: 1px;
+      background: var(--gold);
+      margin: 28px auto;
+    }
+    .thankyou-steps {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+    .step-item {
+      text-align: center;
+      max-width: 140px;
+    }
+    .step-num {
+      width: 38px; height: 38px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin: 0 auto 12px;
+    }
+    .step-label {
+      font-size: 0.68rem;
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      color: var(--light-gray);
+      line-height: 1.6;
+    }
+    .step-connector {
+      width: 30px; height: 1px;
+      background: var(--border);
+      align-self: center;
+      margin-top: -20px;
+    }
+    @media (max-width: 600px) {
+      .step-connector { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="navbar" class="scrolled">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><span></span></div>
+    <span class="nav-logo-text">Prestige<span>Motors</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMobileMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="services.html">Services</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- ===== THANK YOU ===== -->
+<section class="thankyou-section">
+  <div class="thankyou-content">
+
+    <div class="thankyou-icon">✓</div>
+
+    <div class="section-tag" style="justify-content: center;">
+      Request Received
+    </div>
+
+    <h1 class="thankyou-title">We'll <em>Reach You</em><br>Very Soon</h1>
+
+    <div class="thankyou-divider"></div>
+
+    <p class="thankyou-text" id="thankMessage">
+      Thank you for reaching out to Prestige Motors. Our dedicated automotive specialist will review your request and contact you within <strong style="color: var(--gold);">24 hours</strong> to discuss your requirements in detail.
+    </p>
+
+    <img
+      src="pics/thank u page.jpg"
+      alt="Luxury Car Delivery"
+      class="thankyou-img"
+    />
+
+    <div class="thankyou-steps">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-label">Request Confirmed</div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-label">Specialist Assigned</div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-label">We Contact You</div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-label">Your Dream Car</div>
+      </div>
+    </div>
+
+    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <a href="index.html" class="btn-primary">Back to Home</a>
+      <a href="services.html" class="btn-secondary">Our Services</a>
+    </div>
+
+    <p style="margin-top: 36px; font-size: 0.75rem; color: var(--mid-gray); letter-spacing: 0.05em;">
+      Need immediate assistance? Call us at
+      <a href="tel:+919876543210" style="color: var(--gold); text-decoration: none; font-weight: 600;">+91 98765 43210</a>
+    </p>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER MINIMAL ===== -->
+<footer>
+  <div class="footer-bottom" style="padding: 24px 60px;">
+    <div class="footer-copy">© 2025 Prestige Motors. All Rights Reserved.</div>
+    <div class="footer-legal">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Customize message by service type
+  const params = new URLSearchParams(window.location.search);
+  const service = params.get('service');
+  const msgEl = document.getElementById('thankMessage');
+
+  const messages = {
+    testdrive: 'Your test drive request has been received. Our concierge team will contact you within <strong style="color: var(--gold);">12 hours</strong> to confirm the date, time, and location for your private test drive experience.',
+    consultant: 'Your consultation request is confirmed. One of our senior automotive experts will reach out within <strong style="color: var(--gold);">24 hours</strong> to schedule a personalized session tailored to your preferences.',
+    buycar: 'Your purchase inquiry has been submitted. A dedicated purchase specialist will contact you within <strong style="color: var(--gold);">24 hours</strong> to guide you through pricing, documentation, and delivery options.',
+  };
+
+  if (service && messages[service]) {
+    msgEl.innerHTML = messages[service];
+  }
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+    document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+  }
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+  });
+</script>
+
+</body>
+</html>

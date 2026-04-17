@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prestige Motors  Luxury Car Consultancy</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='12' y='12' width='8' height='8' fill='%23c9a84c' transform='rotate(45 16 16)'/%3E%3C/svg%3E" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- ===== QUERY POPUP ===== -->
+<div class="popup-overlay" id="queryPopup">
+  <div class="popup">
+
+    <!-- HEADER -->
+    <div class="popup-header">
+      <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
+      <div class="popup-tag">Get In Touch</div>
+      <h2 class="popup-title">Send a Query</h2>
+      <p class="popup-subtitle">Optional you can skip anytime</p>
+    </div>
+    <div class="popup-body">
+      <img src="pics/popup.contact.jpg" alt="Luxury Car" class="popup-image">
+      <!-- FORM -->
+      <form onsubmit="handlePopupSubmit(event)">
+
+        <div class="form-group">
+          <label class="form-label">Full Name <span class="form-required">*</span></label>
+          <input type="text" name="name" class="form-input" placeholder="Your full name" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Phone Number <span class="form-required">*</span></label>
+          <input type="tel" name="phone" class="form-input" placeholder="+91 00000 00000" required />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Address</label>
+          <input type="text" name="address" class="form-input" placeholder="Your city / address" />
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Your Message</label>
+          <textarea name="message" class="form-textarea" placeholder="Tell us what you're looking for..."></textarea>
+        </div>
+
+        <button type="submit" class="form-submit">Submit Query</button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="services.html" onclick="closeMobileMenu()">Services</a>
+  <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+  <a href="#" onclick="closeMobileMenu(); openPopup(); return false;" style="color: var(--gold);">Enquire Now</a>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><span></span></div>
+    <span class="nav-logo-text">Prestige<span>Motors</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="#" class="nav-cta" onclick="openPopup(); return false;">Enquire Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMobileMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Purnea's Premier Car Consultancy</div>
+    <h1 class="hero-title">Drive the <em>Extraordinary.</em><br>Own the Legend.</h1>
+    <p class="hero-subtitle">We curate the world's finest automobiles from commanding SUVs to breathtaking sports cars. Expert guidance. Bespoke service. Uncompromised luxury.</p>
+    <div class="hero-buttons">
+      <a href="services.html" class="btn-primary">Explore Services</a>
+      <button class="btn-secondary" onclick="openPopup()">Send Enquiry</button>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-number">50+</div>
+      <div class="stat-label">Cars Delivered</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">5</div>
+      <div class="stat-label">Years of Trust</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number">97%</div>
+      <div class="stat-label">Satisfaction</div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    Scroll
+  </div>
+</section>
+
+<!-- ===== SALES PROFILE ===== -->
+<section class="profile-section">
+  <div class="profile-container">
+
+    <!-- LEFT: CARD -->
+    <div class="profile-card">
+      <img src="pics/card.jpg"Mihir Khan" />
+    </div>
+
+    <!-- RIGHT: DESCRIPTION -->
+    <div class="profile-content">
+      <div class="section-tag">Sales Expert</div>
+      <h2 class="section-title">Mihir <em>Khan</em></h2>
+
+      <p class="profile-text">
+        Mihir Khan is a dedicated Sales Officer at Toyota Purnea, associated with 
+        Prakash Janki Motors Pvt. Ltd. With strong local expertise and a customer first 
+        approach, he specializes in guiding clients toward the right vehicle based on 
+        their needs, budget, and lifestyle.
+      </p>
+
+      <p class="profile-text">
+        Known for his professionalism and transparent dealing, Mihir ensures a smooth 
+        and trustworthy car-buying experience from consultation to final delivery.
+      </p>
+
+      <div class="profile-contact">
+        <div>📞 9031021458 / 9955003705</div>
+        <div>📍 NH-31, Barsauni, Purnea, Bihar</div>
+        <div>📧 sm@prakashtoyota.com</div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <!-- duplicate for seamless loop -->
+    <div class="marquee-item">Toyota<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota <span class="marquee-dot"></span></div>
+    <div class="marquee-item">Toyota<span class="marquee-dot"></span></div>
+  </div>
+</div>
+
+<!-- ===== AVAILABLE CARS ===== -->
+<section class="cars-section">
+  <div class="cars-header">
+    <div>
+      <div class="section-tag">Our Fleet</div>
+      <h2 class="section-title">Available <em>Vehicles</em></h2>
+    </div>
+    <!--<p class="section-desc" style="margin: bottom 100px;  text-align: left; ;">Each car in our collection is meticulously selected for performance, elegance, and exclusivity. Explore and request your personalized brochure.</p>-->
+  </div>
+
+  <div class="cars-grid">
+
+    <!-- Car 1 (wide) -->
+    <div class="car-card fade-up">
+      <img src="pics/Fortuner.1.jpg" alt="Mercedes-Benz GLE" class="car-img" />
+      
+      <div class="car-overlay">
+        <div class="car-badge">Featured</div>
+        <div class="car-name">Fourtuner</div>
+        <div class="car-spec"> Premium SUV · 2.8L Diesel · 4x4 · Automatic</div>
+        <div class="car-price">Ex Showroom price : ₹ 40,00,000</div>
+        <div class="car-actions">
+          <button class="car-btn car-btn-inquiry" onclick="openPopup()">Inquiry</button>
+          <a href="pics/brouche.pdf" type="pdf" class="car-btn car-btn-brochure">Brochure</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 2 -->
+    <div class="car-card fade-up">
+      <img src="pics\hulix.jpg" alt="BMW 7 Series" class="car-img" />
+      <div class="car-overlay">
+        <!-- <div class="car-badge">New Arrival</div> -->
+        <div class="car-name">Hulix  Series</div>
+        <div class="car-spec">Lifestyle Pickup · 2.8L Diesel · 4x4 · Automatic</div>
+        <div class="car-price">Ex Showroom price : ₹ 60,00,000</div>
+        <div class="car-actions">
+          <button class="car-btn car-btn-inquiry" onclick="openPopup()">Inquiry</button>
+          <a href="pics/hilux.pdf" type="pdf" class="car-btn car-btn-brochure">Brochure</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 3 -->
+    <div class="car-card fade-up">
+      <img src="pics/Toyota Urban Cruiser 1.jpg" alt="Porsche 911 Turbo S" class="car-img" />
+      <div class="car-overlay">
+        <div class="car-badge">Exclusive</div>
+        <div class="car-name">Toyota Urban Cruiser</div>
+        <div class="car-spec">Compact SUV · 1.5L Petrol Hybrid · Automatic · 27 km/l</div>
+        <div class="car-price">Ex Showroom price : ₹ 60,00,000</div>
+        <div class="car-actions">
+          <button class="car-btn car-btn-inquiry" onclick="openPopup()">Inquiry</button>
+           <a href="pics/Urban.pdf" type="pdf" class="car-btn car-btn-brochure">Brochure</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Car 5 -->
+    <div class="car-card fade-up">
+      <img src="pics/vellfire.1.jpg" alt="Audi RS7" class="car-img" />
+      <div class="car-overlay">
+        <div class="car-badge">ULTRA LUXURY</div>
+        <div class="car-name">Vellfire</div>
+        <div class="car-spec"><div class="car-spec">Luxury MPV · 2.5L Petrol Hybrid · Automatic · AWD</div></div>
+        <div class="car-price">Starting ₹ 1,89,00,000</div>
+        <div class="car-actions">
+          <button class="car-btn car-btn-inquiry" onclick="openPopup()">Inquiry</button>
+          <a href="pics/brouche.pdf" type="pdf" class="car-btn car-btn-brochure">Brochure</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 6 -->
+    <div class="car-card fade-up">
+      <img src="pics/camry.jpg" alt="camry image" class="car-img" />
+      <div class="car-overlay">
+        <div class="car-badge">Feature</div>
+        <div class="car-name">camry</div>
+        <div class="car-spec">Luxury SUV · 4.0L V8 · 542 HP</div>
+        <div class="car-price">Starting ₹ 4,10,00,000</div>
+        <div class="car-actions">
+          <button class="car-btn car-btn-inquiry" onclick="openPopup()">Inquiry</button>
+         <a href="pics/camry.pdf" type="pdf" class="car-btn car-btn-brochure">Brochure</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car 7 -->
+    <div class="car-card fade-up">
+      <img src="pics/glanza.avif" alt="Lamborghini Urus" class="car-img" />
+      <div class="car-overlay">
+        <div class="car-badge">performance</div>
+        <div class="car-name">Toyota Glanza </div>
+        <div class="car-spec">Super SUV · 4.0L V8 · 666 HP</div>
+        <div class="car-price">Starting ₹ 4,22,00,000</div>
+        <div class="car-actions">
+          <button class="car-btn car-btn-inquiry" onclick="openPopup()">Inquiry</button>
+          <a href="pics/glanza.pdf" type="pdf" class="car-btn car-btn-brochure">Brochure</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews-section">
+  <div class="reviews-header">
+    <div class="section-tag">Client Stories</div>
+    <h2 class="section-title">What Our Clients <em>Say</em></h2>
+    <p class="section-desc" style="margin: 0 auto;">Real experiences from discerning clients who trusted Prestige Motors to find their dream car.</p>
+  </div>
+  <div class="reviews-grid">
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">The team at Prestige Motors made the entire process seamless. From the test drive to the paperwork, everything was handled with the utmost professionalism. My Range Rover was delivered in pristine condition.</p>
+      <div class="review-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <div class="review-author">
+        <div class="review-avatar">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80" alt="Arjun Mehta" />
+        </div>
+        <div>
+          <div class="review-name">Arjun Mehta</div>
+          <div class="review-role">CEO, Mehta Industries · Bihar</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">I had very specific requirements for my Hulix . The consultants here listened patiently, understood every detail, and sourced exactly what I wanted. Outstanding expertise and service.</p>
+      <div class="review-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <div class="review-author">
+        <div class="review-avatar">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&q=80" alt="Priya Sharma" />
+        </div>
+        <div>
+          <div class="review-name">Priya Sharma</div>
+          <div class="review-role">Managing Director · Bihar</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card fade-up">
+      <div class="review-quote">"</div>
+      <p class="review-text">Exceptional experience from start to finish. The showroom itself feels like a luxury destination. They helped me select the perfect Bentley Bentayga and the after-sales support has been remarkable.</p>
+      <div class="review-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <div class="review-author">
+        <div class="review-avatar">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80" alt="Vikram Nair" />
+        </div>
+        <div>
+          <div class="review-name">Vikram Nair</div>
+          <div class="review-role">CA · Bihar</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom: 20px; display: flex;">
+        <div class="nav-logo-icon"><span></span></div>
+        <span class="nav-logo-text">Prestige<span>Motors</span></span>
+      </a>
+      <p class="footer-desc">purnia's most trusted automobile consultancy. We connect discerning clients with their perfect vehicle with honesty, expertise, and elegance.</p>
+      <div class="footer-social">
+        <a href="#" class="social-link" aria-label="Instagram">𝕀</a>
+        <a href="#" class="social-link" aria-label="Facebook">𝔽</a>
+        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+        <a href="#" class="social-link" aria-label="YouTube">▶</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="#" onclick="openPopup(); return false;">Send Enquiry</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Our Services</div>
+      <ul class="footer-links">
+        <li><a href="services.html">Book Test Drive</a></li>
+        <li><a href="services.html">Car Consultancy</a></li>
+        <li><a href="services.html">Buy a Car</a></li>
+        <li><a href="services.html">Fleet Solutions</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-icon">📍</span>
+        <span class="footer-contact-text">42, Rajpur Road, Dehradun,<br>Uttarakhand 248001</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-icon">📞</span>
+        <span class="footer-contact-text">+91 98765 43210<br>+91 13542 98765</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-icon">✉</span>
+        <span class="footer-contact-text"><a href="mailto:khanmehir726@gmail.com" class="email-link">
+              khanmehir726@gmail.com
+         </a>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Prestige Motors. All Rights Reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">D

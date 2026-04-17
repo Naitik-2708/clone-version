@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Prestige Motors</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="closeMobileMenu()">Home</a>
+  <a href="services.html" onclick="closeMobileMenu()">Services</a>
+  <a href="contact.html" onclick="closeMobileMenu()">Contact</a>
+</div>
+
+<!-- ===== NAVIGATION ===== -->
+<nav id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon"><span></span></div>
+    <span class="nav-logo-text">Prestige<span>Motors</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMobileMenu()" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<div class="page-hero">
+  <div class="page-hero-content">
+    <div class="page-breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Services</div>
+    <div class="section-tag">What We Do</div>
+    <h1 class="section-title" style="font-size: clamp(2.4rem, 5vw, 4rem);">Bespoke <em>Automotive</em><br>Services</h1>
+    <p class="section-desc">From curated test drives to complete purchase guidance — we handle every step of your luxury car journey.</p>
+  </div>
+</div>
+
+<!-- ===== SERVICES CARDS ===== -->
+<section class="services-section">
+  <div class="services-grid">
+
+    <!-- Service 1 -->
+    <div class="service-card fade-up" onclick="showForm('testdrive')">
+      <div class="service-num">01</div>
+      <div class="service-icon">🚗</div>
+      <h3 class="service-name">Book a Test Drive</h3>
+      <p class="service-desc">Experience the thrill firsthand. Our concierge team will arrange a private, unhurried test drive at a time and location that suits you.</p>
+      <button class="service-cta">Book Now</button>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card fade-up" onclick="showForm('consultant')">
+      <div class="service-num">02</div>
+      <div class="service-icon">🎯</div>
+      <h3 class="service-name">Car Consultancy</h3>
+      <p class="service-desc">Confused between models, trims, or brands? Our seasoned experts provide impartial, in-depth advice tailored to your lifestyle and budget.</p>
+      <button class="service-cta">Consult Now</button>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card fade-up" onclick="showForm('buycar')">
+      <div class="service-num">03</div>
+      <div class="service-icon">🔑</div>
+      <h3 class="service-name">Buy a Car</h3>
+      <p class="service-desc">From selection to paperwork to delivery — we manage the entire purchase process with precision, transparency, and white-glove service.</p>
+      <button class="service-cta">Start Purchase</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== FORM: TEST DRIVE ===== -->
+<section class="service-form-section" id="form-testdrive">
+  <div class="service-form-container">
+    <div class="service-form-header">
+      <div class="section-tag">Step 1 of 1</div>
+      <h2 class="section-title" style="font-size: 2.2rem;">Book a <em>Test Drive</em></h2>
+      <p class="section-desc">Fill in your details below and our team will confirm your test drive appointment within a few hours.</p>
+    </div>
+    <form onsubmit="handleSubmit(event, 'testdrive')">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Full Name <span class="form-required">*</span></label>
+          <input type="text" name="name" class="form-input" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number <span class="form-required">*</span></label>
+          <input type="tel" name="phone" class="form-input" placeholder="+91 00000 00000" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address <span class="form-required">*</span></label>
+        <input type="email" name="email" class="form-input" placeholder="your@email.com" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Address <span class="form-required">*</span></label>
+        <input type="text" name="address" class="form-input" placeholder="Your city / full address" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Car Model <span class="form-required">*</span></label>
+        <select name="carModel" class="form-select form-input" required>
+          <option value="" disabled selected>Select a car model</option>
+          <option>Fortuner</option>
+          <option>Fortuner Legender</option>
+          <option>Urban Cruiser Hyryder</option>
+          <option>Urban Cruiser Taisor</option>
+          <option>Land Cruiser 300</option>
+          <option>Innova Crysta</option>
+          <option>Rumion</option>
+          <option>Vellfire</option>
+          <option>Camry</option>
+          <option>Hilux</option>
+          <option>Other (specify in notes)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Preferred Date & Time</label>
+        <input type="datetime-local" name="dateTime" class="form-input" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Additional Notes</label>
+        <textarea name="message" class="form-textarea" placeholder="Any special requirements or questions..."></textarea>
+      </div>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <button type="submit" class="form-submit" style="flex: 1;">Confirm Test Drive Booking</button>
+        <button type="button" onclick="hideForm()" class="btn-secondary" style="flex: none; padding: 16px 24px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.2);">← Back</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FORM: CONSULTANT ===== -->
+<section class="service-form-section" id="form-consultant">
+  <div class="service-form-container">
+    <div class="service-form-header">
+      <div class="section-tag">Expert Consultation</div>
+      <h2 class="section-title" style="font-size: 2.2rem;">Car <em>Consultancy</em></h2>
+      <p class="section-desc">Share your details and we'll pair you with one of our senior automotive consultants for a personalised session.</p>
+    </div>
+    <form onsubmit="handleSubmit(event, 'consultant')">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Full Name <span class="form-required">*</span></label>
+          <input type="text" name="name" class="form-input" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number <span class="form-required">*</span></label>
+          <input type="tel" name="phone" class="form-input" placeholder="+91 00000 00000" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address <span class="form-required">*</span></label>
+        <input type="email" name="email" class="form-input" placeholder="your@email.com" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Address <span class="form-required">*</span></label>
+        <input type="text" name="address" class="form-input" placeholder="Your city / full address" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Budget Range</label>
+        <select name="budget" class="form-select form-input">
+          <option value="" disabled selected>Select your budget</option>
+          <option>₹ 20L – ₹ 30L</option>
+          <option>₹ 30L – ₹ 40L</option>
+          <option>₹ 40L – ₹ 50L</option>
+          <option>₹ 50L – ₹ 1 Crore</option>
+          <option>₹ 1 Crore & above</option>
+          <option>Flexible / Not decided</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">What type of vehicle are you looking for?</label>
+        <textarea name="message" class="form-textarea" placeholder="E.g. family SUV, performance sedan, track-ready sports car..."></textarea>
+      </div>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <button type="submit" class="form-submit" style="flex: 1;">Request Consultation</button>
+        <button type="button" onclick="hideForm()" class="btn-secondary" style="flex: none; padding: 16px 24px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.2);">← Back</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FORM: BUY CAR ===== -->
+<section class="service-form-section" id="form-buycar">
+  <div class="service-form-container">
+    <div class="service-form-header">
+      <div class="section-tag">Purchase Initiation</div>
+      <h2 class="section-title" style="font-size: 2.2rem;">Buy a <em>Car</em></h2>
+      <p class="section-desc">Begin your purchase journey. Our specialists will guide you every step — pricing, documentation, financing, and delivery.</p>
+    </div>
+    <form onsubmit="handleSubmit(event, 'buycar')">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Full Name <span class="form-required">*</span></label>
+          <input type="text" name="name" class="form-input" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Phone Number <span class="form-required">*</span></label>
+          <input type="tel" name="phone" class="form-input" placeholder="+91 00000 00000" required />
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address <span class="form-required">*</span></label>
+        <input type="email" name="email" class="form-input" placeholder="your@email.com" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Address <span class="form-required">*</span></label>
+        <input type="text" name="address" class="form-input" placeholder="Your city / full address" required />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Car Model You Wish to Purchase <span class="form-required">*</span></label>
+        <select name="carModel" class="form-select form-input" required>
+          <option>Fortuner</option>
+          <option>Fortuner Legender</option>
+          <option>Urban Cruiser Hyryder</option>
+          <option>Urban Cruiser Taisor</option>
+          <option>Land Cruiser 300</option>
+          <option>Innova Crysta</option>
+          <option>Rumion</option>
+          <option>Vellfire</option>
+          <option>Camry</option>
+          <option>Hilux</option>
+          <option>Other (will discuss with consultant)</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Preferred Payment Mode</label>
+        <select name="payment" class="form-select form-input">
+          <option value="" disabled selected>Select payment preference</option>
+          <option>Full Cash / Cheque</option>
+          <option>Bank Loan / Financing</option>
+          <option>Lease</option>
+          <option>Part Exchange</option>
+          <option>To be discussed</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Additional Requirements</label>
+        <textarea name="message" class="form-textarea" placeholder="Specific color, trim, accessories, delivery timeline..."></textarea>
+      </div>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <button type="submit" class="form-submit" style="flex: 1;">Submit Purchase Request</button>
+        <button type="button" onclick="hideForm()" class="btn-secondary" style="flex: none; padding: 16px 24px; font-size: 0.7rem; border: 1px solid rgba(255,255,255,0.2);">← Back</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom: 20px; display: flex;">
+        <div class="nav-logo-icon"><span></span></div>
+        <span class="nav-logo-text">Prestige<span>Motors</span></span>
+      </a>
+      <p class="footer-desc">India's most trusted luxury automobile consultancy. Expert guidance, bespoke service, uncompromised luxury.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigation</div>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#" onclick="showForm('testdrive'); return false;">Book Test Drive</a></li>
+        <li><a href="#" onclick="showForm('consultant'); return false;">Car Consultancy</a></li>
+        <li><a href="#" onclick="showForm('buycar'); return false;">Buy a Car</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-icon">📍</span>
+        <span class="footer-contact-text">42, Rajpur Road, Dehradun,<br>Bi
+           248008</span>
+      </div>
+      <div class="footer-contact-item">
+        <span class="footer-contact-icon">📞</span>
+        <span class="footer-contact-text">+91 98765 43210</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Prestige Motors. All Rights Reserved.</div>
+    <div class="footer-legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+    </div>
+  </div>
+</footer>
+<!--  map -->
+<script>
+  // Page-specific only — all form submission handled by script.js
+  function showForm(type) {
+    document.querySelectorAll('.service-form-section').forEach(f => f.classList.remove('active'));
+    document.querySelectorAll('.service-card').forEach(c => c.style.opacity = '0.5');
+    const form = document.getElementById('form-' + type);
+    if (form) {
+      form.classList.add('active');
+      setTimeout(() => form.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+    }
+  }
+  function hideForm() {
+    document.querySelectorAll('.service-form-section').forEach(f => f.classList.remove('active'));
+    document.querySelectorAll('.service-card').forEach(c => c.style.opacity = '1');
+    document.querySelector('.services-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>
